@@ -19,3 +19,12 @@ st.plotly_chart(fig)
 
 fig = px.bar(df.user.value_counts().to_frame().reset_index().head(15), x='index', y='user', title="Users les plus actifs")
 st.plotly_chart(fig)
+
+st.title("Wordcloud")
+
+wordcloud = get_wordcloud(df)
+
+fig, ax = plt.subplots(figsize = (12, 8))
+ax.imshow(wordcloud)
+plt.axis("off")
+st.pyplot(fig)
