@@ -10,8 +10,8 @@ import plotly.express as px
 st.title("Scrap Twitch")
 
 df = pd.read_csv("data.csv")
-print(df)
-print(df.dtypes)
+st.write(df)
+st.write(df.dtypes)
 fig = px.line(df.resample('T', on='date').message.count().to_frame().reset_index(), x='date', y='message', title='Time Series with Rangeslider')
 
 fig.update_xaxes(rangeslider_visible=True)
