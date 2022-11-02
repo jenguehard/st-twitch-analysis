@@ -22,7 +22,7 @@ st.plotly_chart(fig)
 
 st.title("Référence Sponsors")
 
-fig = px.bar(df[['orange', 'michelin', 'ekwateur', 'nzxt', 'chupa chups', 'logitech', 'redbull', 'direct assurance', 'samsung']].sum().to_frame().reset_index(), x='index', y='0', title="Références au sponsor")
+fig = px.bar(df[['orange', 'michelin', 'ekwateur', 'nzxt', 'chupa chups', 'logitech', 'redbull', 'direct assurance', 'samsung']].sum().to_frame().reset_index(), x='index', y=0, title="Références au sponsor")
 st.plotly_chart(fig)
 
 st.title("Wordcloud")
