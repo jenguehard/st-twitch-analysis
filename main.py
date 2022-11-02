@@ -16,4 +16,6 @@ fig = px.line(df.resample('T', on='date').message.count().to_frame().reset_index
 fig.update_xaxes(rangeslider_visible=True)
 st.plotly_chart(fig)
 
-st.write(df.user.value_counts().to_frame().reset_index())
+
+fig = px.bar(df.user.value_counts().to_frame().reset_index().head(15), x='index', y='user', title="Users les plus actifs")
+st.plotly_chart(fig)
