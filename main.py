@@ -20,6 +20,11 @@ st.plotly_chart(fig)
 fig = px.bar(df.user.value_counts().to_frame().reset_index().head(15), x='index', y='user', title="Users les plus actifs")
 st.plotly_chart(fig)
 
+st.title("Référence Sponsors")
+
+fig = px.bar(df[['orange', 'michelin', 'ekwateur', 'nzxt', 'chupa chups', 'logitech', 'redbull', 'direct assurance', 'samsung']].sum().to_frame().reset_index(), x='index', y='0', title="Références au sponsor")
+st.plotly_chart(fig)
+
 st.title("Wordcloud")
 
 wordcloud = get_wordcloud(df, "message")
