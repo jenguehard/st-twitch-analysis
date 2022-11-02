@@ -22,7 +22,7 @@ st.plotly_chart(fig)
 
 st.title("Wordcloud")
 
-wordcloud = get_wordcloud(df)
+wordcloud = get_wordcloud(df, "message")
 
 fig, ax = plt.subplots(figsize = (12, 8))
 ax.imshow(wordcloud)
